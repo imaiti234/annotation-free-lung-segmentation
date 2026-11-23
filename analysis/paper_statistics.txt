@@ -1,0 +1,120 @@
+
+=== COVID-19-CT-Seg (Table 1): 16 test scans ===
+method                   Dice mean  s.d.    min  n<90           95% CI
+Proposed                     97.43  1.11  95.03     0  [96.88, 97.93]
+Hu et al. (re-impl.)         97.24  1.48  92.92     0  [96.49, 97.86]
+Otsu + 3D components         97.09  1.50  92.37     0  [96.29, 97.70]
+U-Net R231                   97.64  0.88  95.90     0  [97.22, 98.04]
+U-Net R231CovidWeb           97.43  1.02  95.98     0  [96.95, 97.91]
+U-Net LTRCLobes              97.22  1.47  92.78     0  [96.45, 97.84]
+TotalSegmentator             97.58  0.94  94.99     0  [97.09, 97.99]
+
+comparator                 diff 1-sided LB   two-sided 95% CI       p  p Holm prop>comp
+Hu et al. (re-impl.)      +0.18      -0.05   [-0.09, +0.52]  0.2744  1.0000   10/16   (non-inferior at -1 point)
+Otsu + 3D components      +0.34      +0.07   [+0.03, +0.72]  0.0290  0.1740   14/16   (non-inferior at -1 point)
+U-Net R231                -0.22      -0.62   [-0.72, +0.24]  0.4954  1.0000    6/16   (non-inferior at -1 point)
+U-Net R231CovidWeb        -0.01      -0.48   [-0.58, +0.53]  0.9799  1.0000    6/16   (non-inferior at -1 point)
+U-Net LTRCLobes           +0.21      -0.11   [-0.17, +0.63]  0.5282  1.0000    9/16   (non-inferior at -1 point)
+TotalSegmentator          -0.15      -0.63   [-0.72, +0.44]  0.5282  1.0000    6/16   (non-inferior at -1 point)
+
+                      recall  precision  HD95 mean  HD95 median  ASSD  |dV| %
+method                                                                       
+Proposed               97.29      97.58       5.71         6.06  1.14    1.53
+Without A4b and A4d    96.80      97.70       6.32         6.10  1.24    1.92
+U-Net LTRCLobes        96.16      98.34       4.50         3.87  0.90    2.47
+U-Net R231             97.71      97.59       3.89         3.09  0.83    1.36
+U-Net R231CovidWeb     97.33      97.56       4.59         3.43  0.93    1.51
+TotalSegmentator       97.45      97.72       3.53         2.26  0.79    1.22
+Hu et al. (re-impl.)   97.03      97.50       5.62         5.39  1.05    1.98
+Otsu + 3D components   97.12      97.09       5.66         5.23  1.08    1.73
+
+Lesion inclusion (%), mean over scans: Proposed 86.1, Without A4b and A4d 83.6, Hu et al. (re-impl.) 81.9, Otsu + 3D components 81.5, U-Net R231 90.8, U-Net R231CovidWeb 90.9, U-Net LTRCLobes 82.4, TotalSegmentator 94.3
+
+=== Burden split at the median (3.4%) - Table 2 ===
+Proposed                 rho -0.62 (p 0.010)  lower 98.13  upper 96.72
+Without A4b and A4d      rho -0.69 (p 0.003)  lower 98.14  upper 96.32
+Hu et al. (re-impl.)     rho -0.63 (p 0.009)  lower 98.08  upper 96.41
+Otsu + 3D components     rho -0.65 (p 0.006)  lower 97.91  upper 96.26
+U-Net R231               rho -0.36 (p 0.176)  lower 97.87  upper 97.42
+U-Net R231CovidWeb       rho -0.34 (p 0.192)  lower 97.67  upper 97.20
+U-Net LTRCLobes          rho -0.66 (p 0.006)  lower 98.01  upper 96.43
+TotalSegmentator         rho -0.33 (p 0.208)  lower 97.92  upper 97.24
+  lower half, proposed - Hu et al. (re-impl.)   +0.05  two-sided [-0.07, +0.18]  one-sided LB -0.05
+  lower half, proposed - Otsu + 3D components   +0.22  two-sided [+0.16, +0.27]  one-sided LB +0.17
+  lower half, proposed - U-Net R231             +0.26  two-sided [-0.17, +0.70]  one-sided LB -0.11
+  lower half, proposed - U-Net R231CovidWeb     +0.46  two-sided [-0.13, +1.07]  one-sided LB -0.05
+  lower half, proposed - U-Net LTRCLobes        +0.12  two-sided [-0.09, +0.41]  one-sided LB -0.06
+  lower half, proposed - TotalSegmentator       +0.21  two-sided [-0.12, +0.58]  one-sided LB -0.07
+  lower half, proposed - Without A4b and A4d    -0.01  two-sided [-0.04, +0.01]  one-sided LB -0.03
+  upper half, proposed - Hu et al. (re-impl.)   +0.31  two-sided [-0.23, +0.94]  one-sided LB -0.15
+  upper half, proposed - Otsu + 3D components   +0.46  two-sided [-0.17, +1.20]  one-sided LB -0.07
+  upper half, proposed - U-Net R231             -0.70  two-sided [-1.42, +0.01]  one-sided LB -1.29
+  upper half, proposed - U-Net R231CovidWeb     -0.48  two-sided [-1.31, +0.31]  one-sided LB -1.18
+  upper half, proposed - U-Net LTRCLobes        +0.29  two-sided [-0.42, +1.07]  one-sided LB -0.32
+  upper half, proposed - TotalSegmentator       -0.52  two-sided [-1.50, +0.58]  one-sided LB -1.36
+  upper half, proposed - Without A4b and A4d    +0.41  two-sided [+0.17, +0.76]  one-sided LB +0.19
+
+=== Output after each operator, COVID-19-CT-Seg (Table 4) ===
+                   Dice  recall  precision   HD95
+method                                           
+A1_coarse         96.20   95.13      97.41  12.57
+A2_elbow          95.44   93.60      97.51  15.04
+A3_separation     95.45   93.57      97.55  15.12
+A4_merging        96.52   96.88      96.18  20.27
+A4b_cavity        96.69   97.32      96.08  21.07
+A4d_lesion_model  96.71   97.38      96.07  21.13
+A5_connectivity   97.38   97.29      97.50   5.86
+A5_final          97.43   97.29      97.58   5.71
+A5_no_cavity      97.23   96.80      97.70   6.32
+
+=== LCTSC (Table 3): 59 test scans ===
+method                   Dice mean  s.d.    min  n<90           95% CI
+Proposed                     95.22  2.05  90.42     0  [94.69, 95.73]
+Without A4b and A4d          95.44  1.82  91.53     0  [94.97, 95.90]
+Hu et al. (re-impl.)         93.82  8.48  46.71     6  [91.45, 95.67]
+Otsu + 3D components         93.16  8.40  46.36     7  [90.81, 94.94]
+U-Net R231                   95.54  2.53  85.53     3  [94.89, 96.13]
+U-Net R231CovidWeb           95.43  2.54  84.63     2  [94.76, 96.04]
+U-Net LTRCLobes              93.06  9.02  53.52     7  [90.61, 95.10]
+TotalSegmentator             95.31  2.42  85.54     3  [94.66, 95.89]
+
+comparator                 diff 1-sided LB   two-sided 95% CI       p  p Holm prop>comp
+Without A4b and A4d       -0.23      -0.35   [-0.38, -0.09]  0.0506  0.2530   27/59   (non-inferior at -1 point)
+Hu et al. (re-impl.)      +1.39      -0.11   [-0.30, +3.64]  0.1891  0.5672   24/59   (non-inferior at -1 point)
+Otsu + 3D components      +2.05      +0.56   [+0.37, +4.28]  0.1096  0.4382   35/59   (non-inferior at -1 point)
+U-Net R231                -0.32      -0.67   [-0.71, +0.16]  0.0008  0.0053   18/59   (non-inferior at -1 point)
+U-Net R231CovidWeb        -0.21      -0.56   [-0.61, +0.30]  0.0064  0.0386   19/59   (non-inferior at -1 point)
+U-Net LTRCLobes           +2.16      +0.51   [+0.24, +4.52]  0.2513  0.5672   23/59   (non-inferior at -1 point)
+TotalSegmentator          -0.10      -0.43   [-0.48, +0.38]  0.1968  0.5672   26/59   (non-inferior at -1 point)
+
+                      recall  precision  HD95 mean  HD95 median  ASSD  |dV| %
+method                                                                       
+Proposed               95.57      94.94      16.10         8.29  3.10    3.02
+Without A4b and A4d    94.98      95.96      15.36         6.91  2.93    2.83
+U-Net LTRCLobes        92.05      94.26      20.47         3.30  5.42    5.40
+U-Net R231             96.05      95.16       6.78         4.32  1.57    3.65
+U-Net R231CovidWeb     95.88      95.11       6.66         5.00  1.60    3.62
+TotalSegmentator       95.13      95.62       6.03         4.64  1.55    3.63
+Hu et al. (re-impl.)   93.95      94.35      22.96         4.69  6.17    7.46
+Otsu + 3D components   93.96      93.09      27.60         6.00  7.63    7.64
+Proposed: 7 scans with HD95 > 30 mm: LCTSC-Test-S3-103, LCTSC-Test-S3-203, LCTSC-Train-S1-004, LCTSC-Train-S2-005, LCTSC-Train-S3-003, LCTSC-Train-S3-006, LCTSC-Train-S3-008
+
+=== Run time per scan, seconds (all scans incl. development; Table 1, Results) ===
+[covid19_ct_seg]
+                name  count  median  mean   std  min    max
+            Proposed     20   242.3 361.0 496.2 53.9 2343.9
+     U-Net LTRCLobes     20   114.3 104.2  73.3 22.2  272.9
+          U-Net R231     20   112.3  97.5  66.5 21.2  236.3
+  U-Net R231CovidWeb     20   109.9  96.8  66.1 21.3  236.5
+    TotalSegmentator     20   117.8 129.8  25.2 93.9  192.9
+Hu et al. (re-impl.)     20    12.1  11.5   7.7  3.3   35.5
+Otsu + 3D components     20     7.9   8.0   5.7  2.3   25.8
+[lctsc]
+                name  count  median  mean  std   min   max
+            Proposed     60   221.4 229.3 70.8 101.4 433.8
+     U-Net LTRCLobes     60    86.8  90.7 20.4  59.0 174.8
+          U-Net R231     60    84.8  87.5 17.3  57.3 153.9
+  U-Net R231CovidWeb     60    83.6  87.4 17.3  56.3 152.4
+    TotalSegmentator     60   114.3 129.3 94.5  85.6 841.2
+Hu et al. (re-impl.)     60     7.4   7.6  1.5   5.1  12.4
+Otsu + 3D components     60     5.1   5.3  1.1   3.5   8.6

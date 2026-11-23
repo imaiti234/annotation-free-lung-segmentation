@@ -1,0 +1,16 @@
+# Exact versions used for the paper (Python 3.11.7, Windows 10), plus the comparators
+# and the LCTSC DICOM/RTSTRUCT loading.
+numpy==1.26.4
+scipy==1.11.4
+scikit-image==0.26.0
+nibabel==5.2.1
+pwlf==2.2.1
+joblib==1.2.0
+pandas==2.1.4
+matplotlib==3.8.0
+SimpleITK==2.3.1
+pydicom==3.0.2
+rt-utils            # RTSTRUCT rasterisation (LCTSC reference masks)
+torch==2.7.0
+lungmask==0.2.21
+TotalSegmentator==2.18.0

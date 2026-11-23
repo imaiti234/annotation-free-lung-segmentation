@@ -1,0 +1,9 @@
+# The segmentation method (lungseg) and the evaluation scripts
+numpy>=1.24
+scipy>=1.10
+scikit-image>=0.21
+nibabel>=5.0
+pwlf>=2.2
+joblib>=1.2
+pandas>=2.0
+matplotlib>=3.7
