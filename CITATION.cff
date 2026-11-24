@@ -1,10 +1,12 @@
+
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "Training-free lung segmentation in volumetric CT (code for the Scientific Reports submission)"
-version: 1.0.0
-date-released: 2026-11-30   # change to the date of the GitHub release
+title: "Training-free lung segmentation in volumetric CT"
+version: 1.0.1
+date-released: 2026-11-23
 license: MIT
-repository-code: "https://github.com/YOUR-USERNAME/annotation-free-lung-segmentation"
+repository-code: "https://github.com/imaiti234/annotation-free-lung-segmentation"
+
 authors:
   - family-names: Maiti
     given-names: Ishita
@@ -15,6 +17,7 @@ authors:
   - family-names: Ghosh
     given-names: Nirmalya
     affiliation: "Department of Electrical Engineering, Indian Institute of Technology Kharagpur"
+
 keywords:
   - lung segmentation
   - computed tomography
